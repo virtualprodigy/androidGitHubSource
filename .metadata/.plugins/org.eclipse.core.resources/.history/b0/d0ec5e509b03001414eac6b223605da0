@@ -1,0 +1,74 @@
+package com.virtualprodigyllc.sampler;
+
+import java.util.Vector;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+
+import com.virtualprodigyllc.sampler.MainActivity.DemoTypes;
+import com.virtualprodigyllc.sampler.utils.AnimatedListAdapter;
+import com.virtualprodigyllc.sampler.utils.AnimatedListView;
+
+import fragments.SelectSampleFragment.Callback;
+import fragments.SelectSampleFragment.DemosInfo;
+
+public class SMSFragment extends Fragment{
+    Context fragmentContext;
+    Resources res;
+    private Callback callback;
+    
+	public interface Callback {
+		public void finishedSendingSMS();
+	}
+	
+    public SMSFragment() {
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View fragView = inflater.inflate(R.layout.sms_frag, container, false);
+		fragmentContext = getActivity();
+		res = getResources();
+		
+		ActionBar ab = getActivity().getActionBar();
+		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		ab.setDisplayHomeAsUpEnabled(true);
+		ab.setDisplayShowHomeEnabled(true);
+        
+        return fragView;
+    }
+    
+  private OnClickListener clickListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			
+		}  
+  };
+  
+	@Override
+	public void onAttach(Activity activity) {
+
+		super.onAttach(activity);
+		try {
+			callback = (Callback) activity;
+		} catch (ClassCastException e) {
+			throw new ClassCastException(activity.toString()
+					+ " must implement Callbacks");
+		}
+	}
+    
+    
+}

@@ -1,0 +1,78 @@
+package com.virtualprodigyllc.sampler;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+
+public class SMSFragment extends Fragment{
+	private Context fragmentContext;
+	private Resources res;
+	private ActionBar actionBar;
+	private Callback callback;
+
+	public interface Callback {
+		public void finishedSendingSMS();
+	}
+
+	public SMSFragment() {
+		
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View fragView = inflater.inflate(R.layout.sms_frag, container, false);
+		fragmentContext = getActivity();
+		res = getResources();
+
+		return fragView;
+	}
+
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.send_text_message, menu);
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menu_send_text:
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+
+		super.onAttach(activity);
+		try {
+			callback = (Callback) activity;
+			actionBar = ((ActionBarActivity)activity).getSupportActionBar();
+		} catch (ClassCastException e) {
+			throw new ClassCastException(activity.toString()
+					+ " must implement Callbacks");
+		}
+	}
+
+
+}

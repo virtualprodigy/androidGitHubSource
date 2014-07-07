@@ -1,0 +1,72 @@
+package com.virtualprodigyllc.sampler;
+
+import java.util.Vector;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+
+
+public class SMSFragment extends Fragment{
+	private Context fragmentContext;
+	private Resources res;
+	private ActionBar actionBar;
+	private Callback callback;
+
+	public interface Callback {
+		public void finishedSendingSMS();
+	}
+
+	public SMSFragment() {
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View fragView = inflater.inflate(R.layout.sms_frag, container, false);
+		fragmentContext = getActivity();
+		res = getResources();
+
+		return fragView;
+	}
+
+	private OnClickListener clickListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+
+		}  
+	};
+
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+
+		super.onAttach(activity);
+		try {
+			callback = (Callback) activity;
+			actionBar = ((ActionBarActivity)activity).getSupportActionBar();
+		} catch (ClassCastException e) {
+			throw new ClassCastException(activity.toString()
+					+ " must implement Callbacks");
+		}
+	}
+
+
+}

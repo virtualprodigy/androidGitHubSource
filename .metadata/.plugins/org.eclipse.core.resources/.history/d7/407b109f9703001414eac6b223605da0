@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000"
+    android:orientation="vertical"
+    android:weightSum="7"
+    android:padding="16dp" >
+
+    <EditText
+        android:id="@+id/text_number"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_rect"
+        android:ellipsize="end"
+        android:gravity="left|top"
+        android:inputType="phone"
+        android:lines="1"
+        android:singleLine="true"
+        android:hint="@string/sms_num_hint"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:ignore="SpUsage" />
+    
+        <EditText
+        android:id="@+id/text_message"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:background="@drawable/round_rect"
+        android:gravity="left|top"
+        android:hint="@string/sms_message_hint"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:ignore="SpUsage" />
+
+</LinearLayout>

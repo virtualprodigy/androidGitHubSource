@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class linkeds{
+	
+		private static Scanner scanObj;
+		private static Scanner scanInt;
+		private static linkeded list = new linkeded();
+		
+		
+		public static void main (String[] args){	
+
+		}
+}

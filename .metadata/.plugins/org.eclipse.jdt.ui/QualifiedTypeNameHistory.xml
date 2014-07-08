@@ -42,4 +42,5 @@
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
 <fullyQualifiedTypeName name="fragments.CalendarFragment"/>
+<fullyQualifiedTypeName name="comvirtualprodigy.androidsamplerapp.R"/>
 </qualifiedTypeNameHistroy>

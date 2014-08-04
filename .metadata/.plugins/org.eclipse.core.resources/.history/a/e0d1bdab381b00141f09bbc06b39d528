@@ -1,0 +1,40 @@
+package fragments;
+
+import fragments.CalendarFragment.Callback;
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+
+public abstract class AbstractFragment extends Fragment{
+	protected Context fragmentContext;
+	protected Resources res; 
+	
+	public interface Callback {
+		public void finishedCreatingEvent();
+	}
+	
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		fragmentContext = getActivity();
+		res = getResources();
+		setHasOptionsMenu(true);//MB so the fragment has an options menu
+	}
+	
+	@Override
+	public void onAttach(Activity activity) {
+
+		super.onAttach(activity);
+		try {
+			callback = (Callback) activity;
+			actionBar = ((ActionBarActivity)activity).getSupportActionBar();
+		} catch (ClassCastException e) {
+			throw new ClassCastException(activity.toString()
+					+ " must implement Callbacks");
+		}
+	}
+}

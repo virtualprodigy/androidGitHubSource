@@ -2,11 +2,9 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.id"/>
-<fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="com.virtualprodigyllc.sampler.utils.AnimatedListAdapter"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
-<fullyQualifiedTypeName name="android.content.res.Resources"/>
 <fullyQualifiedTypeName name="fragments.SelectSampleFragment.DemosInfo"/>
 <fullyQualifiedTypeName name="com.virtualprodigyllc.sampler.R.styleable"/>
 <fullyQualifiedTypeName name="com.virtualprodigyllc.sampler.R.string"/>
@@ -40,7 +38,20 @@
 <fullyQualifiedTypeName name="android.app.Fragment"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
 <fullyQualifiedTypeName name="fragments.CalendarFragment"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
+<fullyQualifiedTypeName name="android.view.KeyEvent"/>
 <fullyQualifiedTypeName name="comvirtualprodigy.androidsamplerapp.R"/>
+<fullyQualifiedTypeName name="com.virtualprodigy.AndrpodSampleApp.utils.CustomDialog"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.content.res.Resources"/>
+<fullyQualifiedTypeName name="android.widget.ViewFlipper"/>
+<fullyQualifiedTypeName name="comvirtualprodigy.androidsamplerapp.R.id"/>
+<fullyQualifiedTypeName name="fragments.AbstractFragment"/>
+<fullyQualifiedTypeName name="com.virtualprodigy.AndrpodSampleApp.Contact"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="comvirtualprodigy.androidsamplerapp.R.string"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 </qualifiedTypeNameHistroy>

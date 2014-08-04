@@ -28,10 +28,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SMSFragment extends Fragment{
-	private Context fragmentContext;
-	private Resources res;
-	private ActionBar actionBar;
+public class SMSFragment extends AbstractFragment{
 	private Callback callback;
 	private EditText smsNumber;
 	private EditText smsBody;
@@ -69,19 +66,8 @@ public class SMSFragment extends Fragment{
 		case R.id.menu_send_text:
 			sendSMS();
 			return true;
-		case android.R.id.home:// MB nav up icon clicked 
-		NavUtils.navigateUpTo((Activity) fragmentContext, new Intent(fragmentContext, MainActivity.class));
-		return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setDisplayShowHomeEnabled(true);
 	}
 
 	@Override

@@ -1,0 +1,5 @@
+package com.virtualprodigy.AndrpodSampleApp.utils;
+
+public class CustomDialog {
+
+}

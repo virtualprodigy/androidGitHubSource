@@ -1,0 +1,43 @@
+package com.virtualprodigy.AndrpodSampleApp;
+
+public class Contact {
+private String firstName;
+private String lastName;
+private String address;
+private String photoPath;
+
+public Contact(String firstName, String lastName, String address,
+		String photoPath) {
+	super();
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.address = address;
+	this.photoPath = photoPath;
+}
+
+public String getFirstName() {
+	return firstName;
+}
+public void setFirstName(String firstName) {
+	this.firstName = firstName;
+}
+public String getLastName() {
+	return lastName;
+}
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+public String getPhotoPath() {
+	return photoPath;
+}
+public void setPhotoPath(String photoPath) {
+	this.photoPath = photoPath;
+}
+
+}

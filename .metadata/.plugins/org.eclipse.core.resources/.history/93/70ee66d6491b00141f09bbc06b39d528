@@ -1,0 +1,39 @@
+<ViewFlipper
+    android:id="@+id/viewFlipper1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.virtualprodigyllc.sampler.MainActivity"
+        tools:ignore="MergeRootFrame" >
+
+        <LinearLayout
+            android:id="@+id/twoFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2" >
+
+            <FrameLayout
+                android:id="@+id/containerTop"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:context="com.virtualprodigyllc.sampler.MainActivity" />
+
+            <FrameLayout
+                android:id="@+id/containerBottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:context="com.virtualprodigyllc.sampler.MainActivity" >
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</ViewFlipper>

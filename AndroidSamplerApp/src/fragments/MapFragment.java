@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
@@ -26,17 +27,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.virtualprodigy.AndrpodSampleApp.MainActivity;
-import comvirtualprodigy.androidsamplerapp.R;
 
+import comvirtualprodigy.androidsamplerapp.R;
 import fragments.SMSFragment.Callback;
 
-public class MapFragment  extends Fragment{
-	private Context fragmentContext;
-	private Resources res;
-	private ActionBar actionBar;
+public class MapFragment  extends AbstractFragment{
 	private Callback callback;
-	private EditText smsNumber;
-	private EditText smsBody;
+	private EditText address;
 
 	public interface Callback {
 		public void finishedDisplayingMap();
@@ -46,42 +43,32 @@ public class MapFragment  extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View fragView = inflater.inflate(R.layout.sms_frag, container, false);
+		View fragView = inflater.inflate(R.layout.map_frag, container, false);
 		fragmentContext = getActivity();
 		res = getResources();
-		setHasOptionsMenu(true);//MB so the fragment has an options menu
-		smsNumber = (EditText) fragView.findViewById(R.id.text_number);
-		smsBody = (EditText) fragView.findViewById(R.id.text_message);
+		address = (EditText) fragView.findViewById(R.id.address);
 
 		return fragView;
 	}
 
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		inflater.inflate(R.menu.send_text_message, menu);
+		inflater.inflate(R.menu.open_map, menu);
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menu_send_text:
-
+		case R.id.menu_maps:
+			uriToMap();
 			
 			return true;
-		case android.R.id.home:// MB nav up icon clicked 
-		NavUtils.navigateUpTo((Activity) fragmentContext, new Intent(fragmentContext, MainActivity.class));
-		return true;
+//		case android.R.id.home:// MB nav up icon clicked 
+//			callback.finishedDisplayingMap();
+//			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setDisplayShowHomeEnabled(true);
 	}
 
 	@Override
@@ -90,12 +77,15 @@ public class MapFragment  extends Fragment{
 		super.onAttach(activity);
 		try {
 			callback = (Callback) activity;
-			actionBar = ((ActionBarActivity)activity).getSupportActionBar();
 		} catch (ClassCastException e) {
 			throw new ClassCastException(activity.toString()
 					+ " must implement Callbacks");
 		}
 	}
 
-
+	private void uriToMap(){
+		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + address.getText().toString()));
+		startActivity(intent);	
+	}
+	
 }

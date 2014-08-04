@@ -35,5 +35,25 @@
 	<string name="cal_guest_emails">Guest Emails</string>
 	<string name="cal_description">Description</string>
 	<string name="pop_cal">Calendar</string>
+	
+	<!-- map frag -->
+	<string name="map_hint">Enter Address</string>
+	<string name="open_map">Open Maps</string>
+	
+	<!-- Contact frag -->
+	<string name="add_contact">New Contact</string>
+	<string name="emptyContactList">No Contacts Available</string>
+	<string name="addContactTitle">Add New Contact</string>
+	<string name="firstNameHint">First</string>
+	<string name="lastNameHint">Last</string>
+	<string name="phoneHint">XXX-XXX-XXXX</string>
+	<string name="addressHint">123 Street, State 01234</string>
+	<string name="contactPhotoDescription">Contact Photo</string>
 		
+	<!-- alert dialog -->
+	  <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="neutral">Neutral</string>
+    <string name="alert_sample_title">Custom Alert Title</string>
+    <string name="alert_sample_message">This is a custom alert dialog. Check out the class to see full capibilities</string>
 </resources>

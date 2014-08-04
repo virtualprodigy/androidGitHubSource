@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	    <item android:state_pressed="true"
+	          android:drawable="@drawable/selected_round_rect" /> 
+
+	    <item android:state_focused="true"
+	          android:drawable="@drawable/focused_round_rect" /> 
+
+	    <item android:drawable="@drawable/rounded_alert_dialog_button_background" /> 
+	</selector>

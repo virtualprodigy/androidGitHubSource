@@ -21,4 +21,11 @@
  <color name="cinnamon">#7B3F00</color>
  <color name="darkturquoise">#00CED1</color>
  <color name="ivory">#FFFFF0</color>
+ 
+ 
+ <color name="android_selected">#FF33b5e5</color>
+ <color name="android_longpress">#FF0099cc</color>
+ <color name="android_focused_border">#FF33b5e5</color>
+ <color name="android_focused_center">#7F33b5e5</color>
+ <color name="android_transparent">#00000000</color>
 </resources>
